@@ -1,7 +1,7 @@
 import * as glob from 'glob';
 import * as util from '../util.js';
 
-const debug = util.debug('linter-semanitc-release');
+const debug = util.debug('configure-semanitc-release');
 
 function applySemanticReleaseConfig(file = 'package.json') {
   debug('applying semantic-release configuration to', file);
@@ -45,7 +45,7 @@ function applySemanticReleaseConfig(file = 'package.json') {
   util.writeJson(file, packageJson);
 }
 
-export default function lint(fix) {
+export default function configure(fix) {
   if (!fix) return;
   applySemanticReleaseConfig();
 }

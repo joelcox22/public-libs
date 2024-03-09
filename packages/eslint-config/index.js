@@ -5,6 +5,9 @@ import markdown from 'eslint-plugin-markdown';
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 
 const config = [
+  {
+    ignores: ['**/node_modules/', '**/.git/', '**/.parcel-cache/', '**/.vscode-test-web/', 'dist/', 'lib/'],
+  },
   js.configs.recommended,
   {
     files: ['**/*.json'],

@@ -1,13 +1,6 @@
 #!/usr/bin/env node
-
-import confiugreEslint from './config/eslint.js';
-import configurePrettier from './config/prettier.js';
-import configureVscode from './config/vscode.js';
-import configureEditorconfig from './config/editorconfig.js';
-import configureMarkdownlint from './config/markdown.js';
-import eslint from './linters/eslint.js';
-import markdown from './linters/markdown.js';
-import semanticRelase from './linters/semantic-release.js';
+import configure from './config/index.js';
+import lint from './linters/index.js';
 import * as util from './util.js';
 
 const debug = util.debug();
@@ -31,19 +24,10 @@ if (fix && process.argv.includes('--no-fix')) {
 
 debug('lint config:', { fix, updateConfig });
 
-if (fix) {
-  confiugreEslint();
-  configurePrettier();
-  configureVscode();
-  configureEditorconfig();
-  configureMarkdownlint();
+if (updateConfig) {
+  configure();
 }
 
-let failed = false;
-failed |= eslint(fix);
-failed |= markdown(fix);
-failed |= semanticRelase(fix);
+const returnStatus = lint(fix);
 
-if (failed) {
-  process.exit(1);
-}
+process.exit(returnStatus);
