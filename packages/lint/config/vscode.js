@@ -16,7 +16,7 @@ export default function configure() {
     extensions.recommendations = [];
   }
   extensions.recommendations = extensions.recommendations || [];
-  const recommendedExtensions = ['dbaeumer.vscode-eslint', 'davidanson.vscode-markdownlint'];
+  const recommendedExtensions = ['dbaeumer.vscode-eslint', 'davidanson.vscode-markdownlint', 'editorconfig.editorconfig'];
   for (const ext of recommendedExtensions) {
     if (!extensions.recommendations.includes(ext)) {
       extensions.recommendations.push(ext);

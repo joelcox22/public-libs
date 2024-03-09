@@ -7,7 +7,11 @@ export default function configure() {
   if (packageJson.name === '@joelbot/lint') {
     debug("looks like you're working on @joelbot/lint repo, doing some custom stuff to make dev work on the lint package easy");
   } else {
-    // todo
+    packageJson.devDependencies = packageJson.devDependencies || {};
+    packageJson.devDependencies['@joelbot/eslint-config'] = '^1.0.0';
+    packageJson.eslintConfig = {
+      extends: '@joelbot',
+    };
   }
   util.writeJson('package.json', packageJson);
 }
