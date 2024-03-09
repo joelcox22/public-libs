@@ -10,8 +10,18 @@ export default function configure() {
   } else {
     packageJson.devDependencies = packageJson.devDependencies || {};
     packageJson.devDependencies['@joelbot/eslint-config'] = '^1.0.0';
-    delete packageJson.eslintConfig;
-    fs.writeFileSync('eslint.config.json', "export default from '@joelbot/eslint-config';\n");
+    if (packageJson.eslintConfig) {
+      debug('removing eslintConfig from package.json in favour of config via eslint.config.js file');
+      delete packageJson.eslintConfig;
+    }
+    fs.writeFileSync('eslint.config.js', "export default from '@joelbot/eslint-config';\n");
+    const remove = ['.eslintrc', '.eslintrc.js', '.eslintrc.json', '.eslintrc.yml', '.eslintrc.yaml'];
+    for (const file of remove) {
+      if (fs.existsSync(file)) {
+        debug('removing older style eslint config file', file);
+        fs.unlinkSync(file);
+      }
+    }
   }
   util.writeJson('package.json', packageJson);
 }
