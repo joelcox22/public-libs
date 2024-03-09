@@ -16,6 +16,7 @@
     "node": ">=18"
   },
   "dependencies": {
+    "app-root-path": "^3.1.0",
     "debug": "^4.0.0",
     "eslint": "^8.0.0",
     "glob": "^10.3.10",
@@ -27,5 +28,14 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/joelcox22/lint.git"
+  },
+  "private": false,
+  "devDependencies": {
+    "semantic-release": "^23.0.2"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ]
   }
 }

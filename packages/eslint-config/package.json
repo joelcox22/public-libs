@@ -28,5 +28,14 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/joelcox22/lint.git"
+  },
+  "private": false,
+  "devDependencies": {
+    "semantic-release": "^23.0.2"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ]
   }
 }

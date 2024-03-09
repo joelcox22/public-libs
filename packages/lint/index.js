@@ -5,6 +5,7 @@ import configureEditorconfig from './config/editorconfig.js';
 import configureMarkdownlint from './config/markdown.js';
 import eslint from './linters/eslint.js';
 import markdown from './linters/markdown.js';
+import semanticRelase from './linters/semantic-release.js';
 import * as util from './util.js';
 
 const debug = util.debug();
@@ -39,6 +40,7 @@ if (fix) {
 let failed = false;
 failed |= eslint(fix);
 failed |= markdown(fix);
+failed |= semanticRelase(fix);
 
 if (failed) {
   process.exit(1);
