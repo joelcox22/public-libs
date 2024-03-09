@@ -16,7 +16,7 @@ export default function configure() {
       delete packageJson.eslintConfig;
     }
     fs.writeFileSync('eslint.config.js', "import config from '@joelbot/eslint-config';\nexport default config;\n");
-    const remove = ['.eslintrc', '.eslintrc.js', '.eslintrc.json', '.eslintrc.yml', '.eslintrc.yaml'];
+    const remove = ['.eslintrc', '.eslintrc.js', '.eslintrc.json', '.eslintrc.yml', '.eslintrc.yaml', '.eslintignore'];
     for (const file of remove) {
       if (fs.existsSync(file)) {
         debug('removing older style eslint config file', file);
