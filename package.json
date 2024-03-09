@@ -1,0 +1,31 @@
+{
+  "name": "@joelbot/lint",
+  "version": "0.0.0",
+  "private": true,
+  "description": "A personal opinionated linting tool.",
+  "type": "module",
+  "scripts": {
+    "lint": "node packages/lint/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joelcox22/lint.git"
+  },
+  "keywords": [
+    "lint"
+  ],
+  "author": "Joel Cox <joel@pinecodes.com>",
+  "license": "0BSD",
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "semantic-release": "^23.0.2",
+    "semantic-release-monorepo": "^8.0.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}

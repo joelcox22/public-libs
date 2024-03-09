@@ -1,0 +1,12 @@
+{
+  "default": true,
+  "MD013": false,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.markdownlint": true
+  },
+  "eslint.experimental.useFlatConfig": true,
+  "markdownlint.focusMode": true
+}
