@@ -26,10 +26,14 @@ function applySemanticReleaseConfig(file = 'package.json') {
         branches: ['main'],
       };
       packageJson.private = false;
+      packageJson.publishConfig = {
+        access: 'public',
+      };
     } else {
       debug('semantic-release is not a devDependency, ensuring config is removed');
       delete packageJson.release;
       packageJson.private = true;
+      delete packageJson.publishConfig;
     }
   }
   if (Object.keys(packageJson.dependencies).length === 0) {
