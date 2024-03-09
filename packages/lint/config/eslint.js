@@ -1,4 +1,5 @@
 import * as util from '../util.js';
+import * as fs from 'fs';
 
 const debug = util.debug('configure-eslint');
 
@@ -9,9 +10,8 @@ export default function configure() {
   } else {
     packageJson.devDependencies = packageJson.devDependencies || {};
     packageJson.devDependencies['@joelbot/eslint-config'] = '^1.0.0';
-    packageJson.eslintConfig = {
-      extends: '@joelbot',
-    };
+    delete packageJson.eslintConfig;
+    fs.writeFileSync('eslint.config.json', "export default from '@joelbot/eslint-config';\n");
   }
   util.writeJson('package.json', packageJson);
 }
