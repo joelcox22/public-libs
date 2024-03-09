@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import confiugreEslint from './config/eslint.js';
 import configurePrettier from './config/prettier.js';
 import configureVscode from './config/vscode.js';
