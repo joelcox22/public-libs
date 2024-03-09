@@ -20,7 +20,7 @@ jobs:
       - name: yarn
         run: yarn
       - name: release
-        run: yarn workspaces run semantic-release
+        run: yarn workspaces run semantic-release -e semantic-release-monorepo
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
