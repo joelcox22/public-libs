@@ -14,5 +14,7 @@ export default function lint(fix) {
     stdio: 'inherit',
   });
 
-  return result.status !== 0;
+  if (result.status !== 0) {
+    throw new Error('eslint completed with non-zero exit code');
+  }
 }

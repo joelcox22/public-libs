@@ -10,6 +10,7 @@
     "@eslint/eslintrc": "^3.0.0",
     "@typescript-eslint/eslint-plugin": "^7.001",
     "@typescript-eslint/parser": "^7.0.0",
+    "app-root-path": "^3.1.0",
     "eslint": "^8.0.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.0.0",
@@ -18,6 +19,7 @@
     "eslint-plugin-n": "^16.0.0",
     "eslint-plugin-prettier": "^5.1.3",
     "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.34.0",
     "flatted": "^3.3.1",
     "globals": "^14.0.0",
     "prettier": "^3.2.5"

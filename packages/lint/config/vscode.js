@@ -6,7 +6,7 @@ export default function configure() {
   settings['editor.insertSpaces'] = true;
   const onSave = (settings['editor.codeActionsOnSave'] = settings['editor.codeActionsOnSave'] || {});
   onSave['source.fixAll.eslint'] = 'explicit';
-  onSave['source.fixAll.markdownlint'] = true;
+  onSave['source.fixAll.markdownlint'] = 'explicit';
   settings['eslint.experimental.useFlatConfig'] = true;
   settings['markdownlint.focusMode'] = true;
   util.writeJson('.vscode/settings.json', settings);

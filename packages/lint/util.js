@@ -70,6 +70,35 @@ export function writeIni(file, data) {
   fs.writeFileSync(file, content);
 }
 
+export function readLines(file, fallback = []) {
+  if (fs.existsSync(file)) {
+    return fs.readFileSync(file, 'utf-8').split('\n');
+  }
+  _debug(`file ${file} does not exist, returning default value ${JSON.stringify(fallback)}`);
+  return fallback;
+}
+
+export function writeLines(file, lines) {
+  const dirname = path.dirname(file);
+  if (!fs.existsSync(dirname)) {
+    _debug('creating directory', dirname);
+    fs.mkdirSync(dirname, { recursive: true });
+  }
+  const content = lines.join('\n');
+  if (fs.existsSync(file)) {
+    const oldData = fs.readFileSync(file, 'utf-8').split('\n');
+    const diff = diffString(oldData, lines);
+    if (diff === '') {
+      _debug(`lines diff of ${file} old/new content has no changes.`);
+      return;
+    }
+    _debug(`updating existing file ${file}, diff:`, diff);
+  } else {
+    _debug('writing new file', file, content);
+  }
+  fs.writeFileSync(file, content);
+}
+
 export function truthy(value) {
   return (typeof value === 'string' && value.toLowerCase() === 'true') || !!value;
 }
