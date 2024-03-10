@@ -13,7 +13,7 @@ export default function configureForcedDevDependencies() {
     '@joelbot/eslint-config': '^1.0.0',
     '@joelbot/lint': '^1.0.0',
   };
-  const optional = ['semantic-release'];
+  const optional = ['semantic-release', 'typescript'];
   packageJson.dependencies = packageJson.dependencies || {};
   packageJson.devDependencies = packageJson.devDependencies || {};
   Object.entries(force).forEach(([name, version]) => {
