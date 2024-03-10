@@ -1,3 +1,4 @@
+import gitignore from './gitignore.js';
 import eslint from './eslint.js';
 import prettier from './prettier.js';
 import vscode from './vscode.js';
@@ -10,6 +11,7 @@ const debug = util.debug('configure');
 
 export default function configure() {
   Object.entries({
+    gitignore,
     eslint,
     prettier,
     vscode,
