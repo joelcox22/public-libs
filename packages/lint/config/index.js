@@ -5,6 +5,7 @@ import vscode from './vscode.js';
 import editorconfig from './editorconfig.js';
 import markdown from './markdown.js';
 import semanticRelease from './semantic-release.js';
+import forceDevDependencies from './force-devDependencies.js';
 import * as util from '../util.js';
 
 const debug = util.debug('configure');
@@ -18,6 +19,7 @@ export default function configure() {
     editorconfig,
     markdown,
     semanticRelease,
+    forceDevDependencies,
   }).forEach(([name, applyConfig]) => {
     debug(`applying config changes for ${name}`);
     applyConfig();
