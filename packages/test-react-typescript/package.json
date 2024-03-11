@@ -1,0 +1,14 @@
+{
+  "name": "lint-test-react-typescript",
+  "version": "0.0.0",
+  "private": true,
+  "license": "0BSD",
+  "description": "a simple package with react to test the lint config with",
+  "type": "module",
+  "dependencies": {
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.2"
+  }
+}

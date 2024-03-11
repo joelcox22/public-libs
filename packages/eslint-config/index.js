@@ -35,6 +35,7 @@ const config = [
       'react-hooks/rules-of-hooks': 2,
       'react/jsx-no-literals': 0,
       'react/jsx-no-bind': [1, { allowArrowFunctions: true }],
+      'react/jsx-filename-extension': [2, { extensions: ['.jsx', '.tsx'] }],
     },
     languageOptions: {
       parserOptions: {
