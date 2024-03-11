@@ -45,7 +45,6 @@ function applySemanticReleaseConfig(file = 'package.json') {
   util.writeJson(file, packageJson);
 }
 
-export default function configure(fix) {
-  if (!fix) return;
+export default function configure() {
   applySemanticReleaseConfig();
 }
