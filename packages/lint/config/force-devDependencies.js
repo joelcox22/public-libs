@@ -13,9 +13,7 @@ export default function configureForcedDevDependencies() {
     '@joelbot/eslint-config': '^1.0.0',
     '@joelbot/lint': '^1.0.0',
   };
-  const optional = ['semantic-release', 'typescript'];
-  packageJson.dependencies = packageJson.dependencies || {};
-  packageJson.devDependencies = packageJson.devDependencies || {};
+  const optional = ['semantic-release', 'typescript', 'jest', '@types/jest'];
   Object.entries(force).forEach(([name, version]) => {
     if (packageJson.dependencies[name]) {
       delete packageJson.dependencies[name];
@@ -28,11 +26,5 @@ export default function configureForcedDevDependencies() {
       delete packageJson.dependencies[name];
     }
   });
-  if (Object.keys(packageJson.dependencies).length === 0) {
-    delete packageJson.dependencies;
-  }
-  if (Object.keys(packageJson.devDependencies).length === 0) {
-    delete packageJson.devDependencies;
-  }
   util.writeJson('package.json', packageJson);
 }
