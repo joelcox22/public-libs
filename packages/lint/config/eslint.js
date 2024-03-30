@@ -3,6 +3,8 @@ import * as fs from 'fs';
 
 const debug = util.debug('configure-eslint');
 
+export const name = 'eslint';
+
 export default function configure() {
   const packageJson = util.readJson('package.json');
   if (packageJson.name === '@joelbot/lint') {

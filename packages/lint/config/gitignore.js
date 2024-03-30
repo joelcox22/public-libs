@@ -1,6 +1,8 @@
 import * as fs from 'fs';
 import * as util from '../util.js';
 
+export const name = 'gitignore';
+
 export default function configureGitignore() {
   const ignore = util.readLines('.gitignore');
   const ignoreIfExists = ['node_modules', 'cdk.out', 'dist', 'lib', 'coverage', 'yarn-error.log', '.nyc_output', '.eslintcache', '.DS_Store', 'npm-debug.log', '.parcel-cache'];

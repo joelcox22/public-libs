@@ -1,5 +1,7 @@
 import * as util from '../util.js';
 
+export const name = 'prettier';
+
 export default function configure() {
   const config = {
     ...util.readJson('.prettierrc'),

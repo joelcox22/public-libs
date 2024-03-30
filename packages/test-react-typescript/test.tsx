@@ -6,7 +6,7 @@ export function Test() {
   React.useEffect(() => {
     // linter should enforce `value` in hook dependencies
     console.log(value);
-  });
+  }, [value]);
   return (
     <div>
       <input onChange={(e) => setValue(e.target.value)} type="text" value={value} />

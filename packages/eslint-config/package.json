@@ -1,15 +1,18 @@
 {
   "name": "@joelbot/eslint-config",
   "version": "0.0.0",
-  "description": "A personal opinionated eslint configuration.",
+  "private": true,
   "main": "index.js",
-  "type": "module",
+  "description": "A personal opinionated eslint configuration.",
   "author": "Joel Cox <joel@pinecodes.com>",
   "license": "0BSD",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joelcox22/lint.git"
+  },
   "dependencies": {
     "@eslint/eslintrc": "^3.0.0",
-    "@typescript-eslint/eslint-plugin": "^7.001",
-    "@typescript-eslint/parser": "^7.0.0",
     "app-root-path": "^3.1.0",
     "eslint": "^8.0.0",
     "eslint-config-prettier": "^9.1.0",
@@ -23,25 +26,10 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "flatted": "^3.3.1",
     "globals": "^14.0.0",
-    "prettier": "^3.2.5"
+    "prettier": "^3.2.5",
+    "typescript-eslint": "^7.4.0"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/joelcox22/lint.git"
-  },
-  "private": false,
-  "devDependencies": {
-    "semantic-release": "^23.0.2"
-  },
-  "release": {
-    "branches": [
-      "main"
-    ]
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }

@@ -1,19 +1,18 @@
 {
   "name": "@joelbot/lint",
   "version": "0.0.0",
-  "description": "A personal opinionated linting tool.",
+  "private": true,
   "main": "index.js",
-  "type": "module",
-  "bin": {
-    "lint": "./index.js"
-  },
+  "description": "A personal opinionated linting tool.",
   "keywords": [
     "lint"
   ],
   "author": "Joel Cox <joel@pinecodes.com>",
   "license": "0BSD",
-  "engines": {
-    "node": ">=18"
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joelcox22/lint.git"
   },
   "dependencies": {
     "app-root-path": "^3.1.0",
@@ -26,20 +25,10 @@
     "markdownlint": "^0.33.0",
     "markdownlint-rule-helpers": "^0.24.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/joelcox22/lint.git"
+  "bin": {
+    "lint": "./index.js"
   },
-  "private": false,
-  "devDependencies": {
-    "semantic-release": "^23.0.2"
-  },
-  "release": {
-    "branches": [
-      "main"
-    ]
-  },
-  "publishConfig": {
-    "access": "public"
+  "engines": {
+    "node": ">=18"
   }
 }

@@ -1,6 +1,7 @@
 import * as fs from 'fs';
 import globals from 'globals';
 import js from '@eslint/js';
+import ts from 'typescript-eslint';
 import json from 'eslint-plugin-json';
 import markdown from 'eslint-plugin-markdown';
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
@@ -14,7 +15,7 @@ const ignores = fs
   .readFileSync('.gitignore', 'utf-8')
   .split('\n')
   .map((line) => line.trim())
-  .filter((line) => !line.startsWith('#') && line !== '');
+  .filter((line) => !line.startsWith('#') && line.trim() !== '');
 
 debug('calculated eslint ignore list from .gitignore:', ignores);
 
@@ -23,6 +24,16 @@ const config = [
     ignores,
   },
   js.configs.recommended,
+  ...ts.configs.recommended,
+  {
+    files: ['**/*.{j,t}s'],
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+      },
+    },
+  },
   {
     files: ['**/*.{jsx,tsx}'],
     plugins: {
@@ -58,15 +69,6 @@ const config = [
     plugins: { json },
     processor: json.processors['.json'],
     rules: json.configs.recommended.rules,
-  },
-  {
-    files: ['**/*.js', '**/*.ts'],
-    languageOptions: {
-      globals: {
-        ...globals.browser,
-        ...globals.node,
-      },
-    },
   },
   {
     files: ['**/*.md'],

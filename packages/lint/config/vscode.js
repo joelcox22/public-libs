@@ -1,5 +1,7 @@
 import * as util from '../util.js';
 
+export const name = 'vscode';
+
 export default function configure() {
   const settings = util.readJson('.vscode/settings.json');
   settings['editor.tabSize'] = 2;

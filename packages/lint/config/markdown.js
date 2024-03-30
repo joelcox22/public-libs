@@ -1,5 +1,7 @@
 import * as util from '../util.js';
 
+export const name = 'markdown';
+
 export default function configure() {
   const settings = {
     ...util.readJson('.markdownlint.json'),

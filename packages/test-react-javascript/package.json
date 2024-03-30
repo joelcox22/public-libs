@@ -2,8 +2,8 @@
   "name": "lint-test-react-javascript",
   "version": "0.0.0",
   "private": true,
-  "license": "0BSD",
   "description": "a simple package with react to test the lint config with",
+  "license": "0BSD",
   "type": "module",
   "dependencies": {
     "react": "^18.2.0"

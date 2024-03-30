@@ -11,7 +11,6 @@ const program = new Command();
 program.name('lint');
 program.description(`@joelbot/lint is a very opinionated linting tool.
 
-
 Running without arguments will update various configuration files, lint your code and apply recommended fix, and complain about anything it can't fix.
 
 What kind of config does it update automatically?
@@ -21,6 +20,8 @@ What kind of config does it update automatically?
 - editorconfig
 - semantic-release
 - package.json dependencies that should be devDependencies
+- jest configuration
+- sort order of package.json keys
 
 The idea is "just run \`yarn lint\`" and try not to think about all the above things (but do review any changes to understand the implications).
 
@@ -32,12 +33,12 @@ program.option('--no-fix', 'Do not auto-fix lint errors');
 program.option('--no-update-configuration', 'Do not update configuration files');
 
 program.action((options) => {
-  const CI = !util.truthy(process.env.CI);
+  const CI = util.truthy(process.env.CI);
 
   debug(`CI environment variable is ${CI ? 'truthy' : 'falsy'}`);
 
-  let updateConfig = CI;
-  let fix = CI;
+  let updateConfig = !CI;
+  let fix = !CI;
 
   if (!updateConfig) {
     debug('detected as running in CI, skipping config file updates.');

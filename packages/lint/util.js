@@ -14,7 +14,7 @@ export function readJson(file, fallback = {}) {
   if (fs.existsSync(file)) {
     return JSON.parse(fs.readFileSync(file, 'utf-8'));
   } else {
-    _debug(`file ${file} does not exist, returning default value ${JSON.stringify(fallback)}`);
+    _debug(`file ${path.resolve(file)} does not exist, returning default value ${JSON.stringify(fallback)}`);
     return fallback;
   }
 }
@@ -25,17 +25,17 @@ export function writeJson(file, data) {
     _debug('creating directory', dirname);
     fs.mkdirSync(dirname, { recursive: true });
   }
-  const content = JSON.stringify(data, null, 2);
+  const content = JSON.stringify(data, null, 2) + '\n';
   if (fs.existsSync(file)) {
     const oldData = JSON.parse(fs.readFileSync(file, 'utf-8'));
     const diff = diffString(oldData, data);
     if (diff === '') {
-      _debug(`json diff of ${file} old/new content has no changes.`);
+      _debug(`json diff of ${path.resolve(file)} old/new content has no changes.`);
       return;
     }
-    _debug(`updating existing file ${file}, diff:`, diff);
+    _debug(`updating existing file ${path.resolve(file)}, diff:`, diff);
   } else {
-    _debug('writing new file', file, content);
+    _debug('writing new file', path.resolve(file), content);
   }
   fs.writeFileSync(file, content);
 }
@@ -101,4 +101,23 @@ export function writeLines(file, lines) {
 
 export function truthy(value) {
   return (typeof value === 'string' && value.toLowerCase() === 'true') || !!value;
+}
+
+export function sortKeys(data, order) {
+  return Object.fromEntries(
+    Object.entries(data).sort((a, b) => {
+      const aIndex = order.indexOf(a[0]);
+      const bIndex = order.indexOf(b[0]);
+      if (aIndex === -1 && bIndex === -1) {
+        return a[0].localeCompare(b[0]);
+      }
+      if (aIndex === -1) {
+        return 1;
+      }
+      if (bIndex === -1) {
+        return -1;
+      }
+      return aIndex - bIndex;
+    }),
+  );
 }

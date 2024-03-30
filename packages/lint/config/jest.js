@@ -1,12 +1,14 @@
 import * as util from '../util.js';
 import * as fs from 'fs';
 
+export const name = 'jest';
+
 export default function configureJest() {
   const packageJson = util.readJson('package.json');
   let remove = ['jest.config.js', 'jest.config.ts', 'jest.config.cjs', 'jest.config.cts', 'jest.config.mjs', 'jest.config.mts', 'jest.config.json'];
   if ('jest' in packageJson.devDependencies) {
     const jestVersion = packageJson.devDependencies.jest;
-    const jestMajor = jestVersion.replace(/[^\d.].*/, '').split('.')[0];
+    const jestMajor = jestVersion.replace(/^[^\d]+/, '').split('.')[0];
     const latestJestMajor = `^${jestMajor}.0.0`;
     packageJson.devDependencies['@types/jest'] = latestJestMajor;
     packageJson.devDependencies['ts-jest'] = latestJestMajor;
