@@ -3,6 +3,7 @@ import * as glob from 'glob';
 import root from 'app-root-path';
 import * as packageJson from './packageJson.js';
 import * as gitignore from './gitignore.js';
+import * as typescript from './typescript.js';
 import * as eslint from './eslint.js';
 import * as prettier from './prettier.js';
 import * as vscode from './vscode.js';
@@ -29,7 +30,7 @@ export default function configure() {
         dirs.push(path.join(process.cwd(), file, '..'));
       });
     }
-    const plugins = [packageJson, forceDevDependencies, jest, gitignore, eslint, prettier, vscode, editorconfig, markdown, semanticRelease];
+    const plugins = [packageJson, forceDevDependencies, jest, typescript, gitignore, eslint, prettier, vscode, editorconfig, markdown, semanticRelease];
     // eslint-disable-next-line no-inner-declarations
     function exec(plugin, step) {
       if (plugin[step]) {

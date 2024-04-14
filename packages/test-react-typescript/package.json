@@ -6,9 +6,12 @@
   "description": "a simple package with react to test the lint config with",
   "type": "module",
   "dependencies": {
-    "react": "^18.2.0"
+    "immer": "^10.0.4",
+    "react": "^18.2.0",
+    "use-immer": "^0.9.0"
   },
   "devDependencies": {
+    "@types/react": "^18.2.78",
     "typescript": "^5.4.2"
   }
 }

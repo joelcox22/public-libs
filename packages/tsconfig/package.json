@@ -1,0 +1,20 @@
+{
+  "name": "@joelbot/tsconfig",
+  "version": "0.0.0",
+  "private": false,
+  "description": "just a base tsconfig",
+  "author": "Joel Cox <joel@pinecodes.com>",
+  "license": "0BSD",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joelbot22/lint.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ]
+  }
+}
