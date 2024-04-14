@@ -32,4 +32,5 @@ export default function configure() {
       debug('typescript is not a devDependency, and tsconfig.json does not exist, doing nothing');
     }
   }
+  util.writeJson('package.json', packageJson);
 }
