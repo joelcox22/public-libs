@@ -49,6 +49,7 @@ const config = [
       'react/jsx-filename-extension': [2, { extensions: ['.jsx', '.tsx'] }],
       'react/destructuring-assignment': 0,
       'react/no-unused-prop-types': 1,
+      'react/jsx-sort-props': 0,
     },
     languageOptions: {
       parserOptions: {
