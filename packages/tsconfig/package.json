@@ -7,7 +7,7 @@
   "license": "0BSD",
   "repository": {
     "type": "git",
-    "url": "https://github.com/joelbot22/lint.git"
+    "url": "https://github.com/joelcox22/lint.git"
   },
   "publishConfig": {
     "access": "public"
