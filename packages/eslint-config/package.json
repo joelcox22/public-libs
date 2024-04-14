@@ -1,7 +1,7 @@
 {
   "name": "@joelbot/eslint-config",
   "version": "0.0.0",
-  "private": true,
+  "private": false,
   "main": "index.js",
   "description": "A personal opinionated eslint configuration.",
   "author": "Joel Cox <joel@pinecodes.com>",
@@ -31,5 +31,13 @@
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ]
   }
 }

@@ -1,7 +1,7 @@
 {
   "name": "@joelbot/lint",
   "version": "0.0.0",
-  "private": true,
+  "private": false,
   "main": "index.js",
   "description": "A personal opinionated linting tool.",
   "keywords": [
@@ -30,5 +30,13 @@
   },
   "engines": {
     "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ]
   }
 }
