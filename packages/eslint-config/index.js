@@ -31,6 +31,7 @@ const config = [
       globals: {
         ...globals.browser,
         ...globals.node,
+        '@typescript-eslint/no-unused-vars': 'warn',
       },
     },
   },
