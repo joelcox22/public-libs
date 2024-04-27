@@ -5,6 +5,7 @@
   "description": "just a base tsconfig",
   "author": "Joel Cox <joel@pinecodes.com>",
   "license": "0BSD",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/joelcox22/lint.git"

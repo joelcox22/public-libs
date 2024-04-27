@@ -20,7 +20,7 @@
     "noEmitOnError": true,
     "isolatedModules": true,
     "allowSyntheticDefaultImports": true,
-    "allowImportingTsExtensions": false, // just import `.js` instead of `.ts` instead... even though that falls awkward.
+    "allowImportingTsExtensions": false,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
