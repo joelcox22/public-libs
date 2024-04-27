@@ -11,6 +11,7 @@ import * as markdown from './markdown.js';
 import * as semanticRelease from './semantic-release.js';
 import * as forceDevDependencies from './force-devDependencies.js';
 import * as jest from './jest.js';
+import * as cdk from './cdk.js';
 import * as util from '../util.js';
 
 const debug = util.debug('configure');
@@ -29,7 +30,7 @@ export default function configure() {
         dirs.push(path.join(process.cwd(), file, '..'));
       });
     }
-    const plugins = [packageJson, forceDevDependencies, jest, gitignore, eslint, prettier, vscode, editorconfig, markdown, semanticRelease];
+    const plugins = [packageJson, forceDevDependencies, jest, gitignore, eslint, prettier, vscode, editorconfig, markdown, semanticRelease, cdk];
     // eslint-disable-next-line no-inner-declarations
     function exec(plugin, step) {
       if (plugin[step]) {

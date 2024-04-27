@@ -19,6 +19,9 @@ export function post() {
   if (Object.keys(packageJson.devDependencies).length === 0) {
     delete packageJson.devDependencies;
   }
+  if (!('type' in packageJson)) {
+    packageJson.type = 'module';
+  }
   util.writeJson(
     'package.json',
     util.sortKeys(packageJson, [
