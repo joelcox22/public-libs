@@ -13,6 +13,9 @@ export default function configure() {
       // add aws-cdk cli to the project dependencies as well if needed
       packageJson.devDependencies['aws-cdk'] = packageJson.devDependencies['aws-cdk-lib'];
     }
+    if (!('constructs' in packageJson.devDependencies)) {
+      packageJson.devDependencies['constructs'] = '^10.0.0';
+    }
     if (!fs.existsSync('cdk.json')) {
       const cdkJson = util.readJson('cdk.json', {
         app: 'tsx cdk/index.ts',
