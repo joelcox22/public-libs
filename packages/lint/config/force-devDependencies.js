@@ -1,4 +1,4 @@
-import * as root from 'app-root-path';
+import root from 'app-root-path';
 import * as path from 'path';
 import * as util from '../util.js';
 
@@ -16,7 +16,7 @@ export default function configureForcedDevDependencies() {
   } else {
     debug("skipping @joelbot/* dependencies because it looks like you're working on @joelbot/lint repo");
   }
-  const optional = ['semantic-release', 'typescript', 'jest', '@types/jest'];
+  const optional = ['semantic-release', 'typescript', 'jest', '@types/jest', 'typescript'];
   Object.entries(force).forEach(([name, version]) => {
     if (packageJson.dependencies[name]) {
       delete packageJson.dependencies[name];

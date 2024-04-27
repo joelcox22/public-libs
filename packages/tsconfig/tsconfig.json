@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "incremental": true,
+    "target": "ESNext",
+    "jsx": "react",
+    "moduleDetection": "auto",
+    "moduleResolution": "NodeNext",
+    "module": "Node16",
+    "allowArbitraryExtensions": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "outDir": "./",
+    "removeComments": true,
+    "importsNotUsedAsValues": "remove",
+    "downlevelIteration": true,
+    "emitBOM": true,
+    "newLine": "lf",
+    "stripInternal": true,
+    "noEmitOnError": true,
+    "isolatedModules": true,
+    "allowSyntheticDefaultImports": true,
+    "allowImportingTsExtensions": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true
+  },
+  "exclude": ["node_modules", "cdk.out", "dist", "build", "coverage", "public", ".parcel-cache", ".wrangler"]
+}
