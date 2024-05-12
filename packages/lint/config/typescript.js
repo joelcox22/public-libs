@@ -7,8 +7,9 @@ export const name = 'typescript';
 
 export default function configure() {
   const packageJson = util.readJson('package.json');
-  if (packageJson.name === '@joelbot/lint') {
-    debug("looks like you're working on @joelbot/lint repo, doing nothing");
+  debug('working on', process.cwd() + '/package.json (' + packageJson.name + ')');
+  if (packageJson.name === '@joelbot/public-libs') {
+    debug("looks like you're working on @joelbot/public-libs repo, doing nothing");
     return;
   }
   if ('typescript' in packageJson.devDependencies) {

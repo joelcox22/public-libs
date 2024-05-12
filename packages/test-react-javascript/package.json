@@ -5,6 +5,9 @@
   "description": "a simple package with react to test the lint config with",
   "license": "0BSD",
   "type": "module",
+  "scripts": {
+    "build": "exit 0"
+  },
   "dependencies": {
     "react": "^18.2.0"
   }

@@ -1,32 +1,32 @@
 {
-  "name": "@joelbot/lint",
+  "name": "@joelbot/public-libs",
   "version": "0.0.0",
   "private": true,
-  "description": "A personal opinionated linting tool.",
+  "description": "Public packages for personal projects. Not recommended for anyone else to use.",
   "keywords": [
     "lint"
   ],
   "author": "Joel Cox <joel@pinecodes.com>",
-  "license": "0BSD",
+  "license": "UNLICENSED",
   "type": "module",
   "scripts": {
+    "build": "yarn workspaces run build",
     "lint": "node packages/lint/index.js",
-    "test": "jest"
+    "test": "vitest"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/joelcox22/lint.git"
   },
   "devDependencies": {
-    "@types/jest": "^29.0.0",
+    "@joelbot/eslint-config": "^1.0.0",
+    "@joelbot/lint": "^1.0.0",
     "eslint": "^8.0.0",
-    "jest": "^29.7.0",
     "semantic-release": "^23.0.2",
     "semantic-release-monorepo": "^8.0.0",
+    "ts-node": "^10.9.2",
     "typescript": "^5.0.0",
-    "ts-jest": "^29.0.0",
-    "@joelbot/eslint-config": "^1.0.0",
-    "@joelbot/lint": "^1.0.0"
+    "vitest": "^1.6.0"
   },
   "engines": {
     "node": ">=18"

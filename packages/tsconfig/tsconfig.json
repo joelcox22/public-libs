@@ -5,7 +5,7 @@
     "jsx": "react",
     "moduleDetection": "auto",
     "moduleResolution": "NodeNext",
-    "module": "Node16",
+    "module": "NodeNext",
     "allowArbitraryExtensions": true,
     "declaration": true,
     "declarationMap": true,

@@ -10,11 +10,11 @@ export default function configureForcedDevDependencies() {
   const rootPackageJson = util.readJson(path.join(root.path, 'package.json'));
   const packageJson = util.readJson('package.json');
   const force = {};
-  if (rootPackageJson.name !== '@joelbot/lint') {
+  if (rootPackageJson.name !== '@joelbot/public-libs') {
     force['@joelbot/eslint-config'] = '^1.0.0';
     force['@joelbot/lint'] = '^1.0.0';
   } else {
-    debug("skipping @joelbot/* dependencies because it looks like you're working on @joelbot/lint repo");
+    debug("skipping @joelbot/* dependencies because it looks like you're working on @joelbot/public-libs repo");
   }
   const optional = ['semantic-release', 'typescript', 'jest', '@types/jest', 'typescript'];
   Object.entries(force).forEach(([name, version]) => {
