@@ -1,0 +1,30 @@
+{
+  "name": "@joelbot/hooks",
+  "version": "0.0.0",
+  "private": false,
+  "description": "A collection of useful react hooks",
+  "author": "Joel Cox <joel@pinecodes.com>",
+  "license": "0BSD",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joelcox22/public-libs"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0"
+  },
+  "exports": {
+    "use-async-effect": "./dist/use-async-effect.js"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ]
+  }
+}

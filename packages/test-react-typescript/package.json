@@ -5,9 +5,6 @@
   "license": "0BSD",
   "description": "a simple package with react to test the lint config with",
   "type": "module",
-  "scripts": {
-    "build": "exit 0"
-  },
   "dependencies": {
     "immer": "^10.0.4",
     "react": "^18.2.0",

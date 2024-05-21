@@ -6,12 +6,9 @@
   "author": "Joel Cox <joel@pinecodes.com>",
   "license": "0BSD",
   "type": "module",
-  "scripts": {
-    "build": "exit 0"
-  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/joelcox22/lint.git"
+    "url": "https://github.com/joelcox22/public-libs.git"
   },
   "publishConfig": {
     "access": "public"

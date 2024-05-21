@@ -11,17 +11,19 @@ import Debug from 'debug';
 
 const debug = Debug('@joelbot/eslint-config');
 
-const ignores = fs
-  .readFileSync('.gitignore', 'utf-8')
-  .split('\n')
-  .map((line) => line.trim())
-  .filter((line) => !line.startsWith('#') && line.trim() !== '');
+const ignores = fs.existsSync('.gitignore')
+  ? fs
+      .readFileSync('.gitignore', 'utf-8')
+      .split('\n')
+      .map((line) => line.trim())
+      .filter((line) => !line.startsWith('#') && line.trim() !== '')
+  : [];
 
 debug('calculated eslint ignore list from .gitignore:', ignores);
 
 const config = [
   {
-    ignores,
+    ignores: [...ignores, '**/dist/**'],
   },
   js.configs.recommended,
   ...ts.configs.recommended,
